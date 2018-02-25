@@ -986,3 +986,69 @@ INFO:root:starting miner
 INFO:root:starting peer_recieve
 INFO:root:add peer: ['192.241.212.114', 7900]
 INFO:root:stop: False
+INFO:root:custom.current_loc: /Users/zhuangxk/PycharmProjects/basiccoin
+INFO:root:starting database
+INFO:root:stop: False
+INFO:root:starting blockchain
+INFO:root:starting api
+INFO:root:starting peers_check
+INFO:root:starting miner
+INFO:root:starting peer_recieve
+INFO:root:add peer: ['192.241.212.114', 7900]
+INFO:root:stop: False
+INFO:root:shutting off miner
+INFO:root:shutting off miner
+INFO:root:about to stop threads
+INFO:root:broken connection: stop
+INFO:root:shutting off server: 7900
+INFO:root:broken connection: stop
+INFO:root:shutting off server: 7899
+INFO:root:stopped a thread: <Process(peer_recieve, stopped)>
+INFO:root:stopped a thread: <Process(miner, stopped)>
+INFO:root:stopped a thread: <Process(peers_check, stopped)>
+INFO:root:stopped a thread: <Process(api, stopped)>
+INFO:root:stopped a thread: <Process(blockchain, stopped)>
+INFO:root:broken connection: stop
+INFO:root:shutting off server: 7898
+INFO:root:stopped a thread: <DatabaseProcess(database, stopped)>
+INFO:root:all threads stopped
+INFO:root:custom.current_loc: /Users/zhuangxk/PycharmProjects/basiccoin
+INFO:root:starting database
+INFO:root:stop: False
+INFO:root:starting blockchain
+INFO:root:starting api
+INFO:root:starting peers_check
+INFO:root:starting miner
+INFO:root:starting peer_recieve
+INFO:root:add peer: ['192.241.212.114', 7900]
+INFO:root:stop: False
+INFO:root:networking error: 7899
+ERROR:root:<multiprocessing.queues.Queue object at 0x10de6ff90> is not JSON serializable
+Traceback (most recent call last):
+  File "/Users/zhuangxk/PycharmProjects/basiccoin/networking.py", line 26, in serve_forever
+    a=serve_once(s, MAX_MESSAGE_SIZE, handler)
+  File "/Users/zhuangxk/PycharmProjects/basiccoin/networking.py", line 72, in serve_once
+    send_msg(data, client)
+  File "/Users/zhuangxk/PycharmProjects/basiccoin/networking.py", line 80, in send_msg
+    data=tools.package(data)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 243, in dumps
+    return _default_encoder.encode(obj)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <multiprocessing.queues.Queue object at 0x10de6ff90> is not JSON serializable
+INFO:root:not ready
+INFO:root:not ready
+INFO:root:not ready
+INFO:root:not ready
+INFO:root:not ready
+INFO:root:not ready
+INFO:root:not ready
+INFO:root:not ready
+INFO:root:not ready
+INFO:root:not ready
+INFO:root:not ready
+INFO:root:shutting off miner

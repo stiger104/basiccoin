@@ -2,15 +2,19 @@ from multiprocessing import Process
 import os
 import json
 
+
 def default_entry(): return dict(count=0, amount=0)
+
 
 def _noop():
     return None
+
 
 class DatabaseProcess(Process):
     '''
     Manages operations on the database.
     '''
+
     def __init__(self, heart_queue, database_name, logf, port):
         super(DatabaseProcess, self).__init__(name='database')
         self.heart_queue = heart_queue
@@ -71,12 +75,13 @@ class DatabaseProcess(Process):
             self._get = self.DB.Get
             self._put = self.DB.Put
             self._del = self.DB.Delete
-            self._close = _noop # leveldb doesn't have a close func
+            self._close = _noop  # leveldb doesn't have a close func
         try:
             self.salt = self._get('salt')
         except KeyError:
             self.salt = os.urandom(5)
             self._put('salt', self.salt)
+
         def command_handler(command):
             try:
                 name = command['type']
@@ -86,6 +91,7 @@ class DatabaseProcess(Process):
                 self.logf(exc)
                 self.logf('command: ' + str(command))
                 self.logf('command type: ' + str(type(command)))
-                return {'error':'bad data'}
+                return {'error': 'bad data'}
+
         networking.serve_forever(command_handler, self.port, self.heart_queue)
         self._close()
